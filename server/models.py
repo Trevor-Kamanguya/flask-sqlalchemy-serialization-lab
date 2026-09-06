@@ -53,7 +53,7 @@ class Review(db.Model):
         return f'<Review {self.id}, {self.comment}>'
 
 
-    class CustomerSchema(Schema):
+class CustomerSchema(Schema):
     id = fields.Int()
     name = fields.String()
     reviews = fields.List(fields.Nested(lambda: ReviewSchema(exclude=('customer',))))
